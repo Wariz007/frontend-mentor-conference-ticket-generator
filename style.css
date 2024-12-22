@@ -2,7 +2,7 @@
     --Neutral-0: hsl(0, 0%, 100%);
     --Neutral-300: hsl(252, 6%, 83%);
     --Neutral-500: hsl(245, 15%, 58%);
-    --Neutral-700: hsla(245, 19%, 35%, 0.669);
+    --Neutral-700: hsla(245, 19%, 35%, 0.404);
     --Neutral-900: hsl(248, 70%, 10%);
     --Orange-500: hsl(7, 88%, 67%);
     --Orange-700: hsl(7, 71%, 60%);
@@ -21,9 +21,28 @@ html, body{
 }
 
 body{
-    background-image: url(assets/images/background-mobile.png);
+    background-image: url(assets/images/pattern-lines.svg),
+    url(assets/images/pattern-squiggly-line-top.svg),
+    url(assets/images/pattern-squiggly-line-bottom.svg),
+    url(assets/images/background-mobile.png);
+
+    background-position: center, top right, bottom left, center;
+    background-size: cover, 150px, 300px, cover;
+    background-repeat: no-repeat
 }
 
+@media (min-width: 991px) {
+    body{
+    background-image: url(assets/images/pattern-lines.svg),
+    url(assets/images/pattern-squiggly-line-top.svg),
+    url(assets/images/pattern-squiggly-line-bottom.svg),
+    url(assets/images/background-desktop.png);
+
+    background-position: center, top right, bottom left, center;
+    background-size: cover, 350px, 700px, cover;
+    background-repeat: no-repeat
+    }
+}
 
 #main-container{
     display: flex;
@@ -36,7 +55,6 @@ body{
     margin-inline: auto;
     /*border: 2px solid magenta;*/
 }
-
 #logo-container{
     display: flex;
     justify-content: center;
@@ -77,24 +95,33 @@ input[type="file"]{
     opacity: 0;
 }
 .custom-file-upload{
-    
-    padding: 1rem;
-    width: 100%;
-    /*border: 2px solid magenta;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+    background-color: var(--Neutral-700);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.596);
+}
+#upload-icon{
+    width: 2rem;
+}
+#icon-container{
+    padding: 0.7rem 0.8rem 0.5rem;
+    border-radius: 10px;
+    background-color: var(--Neutral-700);
+    border: 1px solid rgba(255, 255, 255, 0.626);
+    margin-bottom: 1rem;
+}
+#instruction{
+    opacity: 40%;
 }
 #ua-copy{
     opacity: 40%;
     font-size: 0.8rem;
-    margin-bottom: 1.5rem;
+    margin: 0 0 1.5rem;
 }
-
-
-
-
-
-
-
-
 .inputs{
     width: 100%;
     height: 2rem;
@@ -121,4 +148,14 @@ button{
     background-color: var(--Orange-700);
     border: none;
     border-radius: 10px;
+}
+
+
+@media (min-width: 767px) {
+    #main-container{
+        width: 50rem;
+    }
+    #input-container{
+        width: 60%;
+    }
 }
