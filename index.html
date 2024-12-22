@@ -29,8 +29,17 @@
     <div id="input-container">
 
       <!--Upload avatar container-->
-      <label for="upload-avatar">Upload avatar</label><br>
-      <input type="file" id="upload-avatar" accept="image/*" class="inputs">
+      <label class="custom-file-upload">
+        <img src="assets/images/icon-upload.svg" alt="">
+        Drag and drop or click to upload
+        <input type="file" id="upload-avatar" accept="image/*" class="inputs custom-file-input" style="display: none;">
+      </label><br>
+
+
+      <p id="ua-copy">
+        <img src="assets/images/icon-info.svg" alt="">
+        Upload your photo (JPG or PNG, max size: 500KB).
+      </p>
 
       <!--full name input container-->
       <label for="full-name">Full name</label>
