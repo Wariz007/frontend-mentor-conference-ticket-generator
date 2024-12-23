@@ -208,3 +208,26 @@ button:hover{
 #email-address{
     margin-bottom: 0.5rem;
 }
+
+/*image preview container*/
+.preview-file-upload{
+    display: none;
+}
+.preview-file-upload:hover{
+    background-color: #4b486a4e;
+}
+.r-and-c:hover{
+    background-color: #4b486a;
+    opacity: 60%;
+}
+.r-and-c:focus{
+    box-shadow: 0 0 0 1.5px #ffffff98;
+}
+.r-and-c{
+    font-size: 0.6rem;
+    width: fit-content;
+    background-color: #4b486ad0;
+    color: white;
+    opacity: 40%;
+    padding: 0.5rem 0.8rem;
+}
