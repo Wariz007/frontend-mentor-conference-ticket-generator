@@ -13,9 +13,10 @@
 
     <!--form page-->
     <div id="form-container">
+      
       <div id="logo-container">
         <img src="assets/images/logo-mark.svg" alt="" id="logo-mark">
-        <p>Coding Conf</p>
+        <p class="logoword-style">Coding Conf</p>
       </div>
   
       <div id="headings">
@@ -84,10 +85,12 @@
           Generate my ticket
         </button>
       </div>
+
+
     </div>
 
     <!--ticket page-->
-    <div id="ticket-container">
+    <div id="ticket-container" style="display: none;">
       <div id="ticket-page">
 
         <div id="logo-container">
@@ -102,8 +105,40 @@
         <p class="sub-heading">
           We've emailed your ticket to <!-- Email Address --> and will send updates in the run up to the event.
         </p>
-  
-        <img src="assets/images/pattern-ticket.svg" alt="" id="ticket">
+        
+
+        <div id="ticket-paper-container">
+          <img src="assets/images/pattern-ticket.svg" alt="" id="ticket">
+
+          <div id="ticket-paper-content">
+
+            <div id="line-1">
+              <img src="assets/images/logo-mark.svg" alt="" id="line-1-logomark">
+              <span id="logoword-and-date">
+                <p class="logoword-style l-and-d">Coding Conf</p>
+                <p class="l-and-d" id="date">Jan 31, 2025 / Austin, TX</p>
+              </span>
+            </div>
+
+            <div id="line-2">
+              <span id="image-and-username">
+                <div id="image">
+                  <img src="assets/images/favicon-32x32.png" alt="" id="upload-icon">
+                </div>
+
+                <div id="name-and-username-container">
+                  <p id="name" >Jonathan Kristoff</p>
+                  <span id="github-and-username">
+                    <img src="assets/images/icon-github.svg" alt="">
+                    <p id="username">@jonathanKristoff</p>
+                  </span>
+                </div>
+              </span>
+            </div>
+
+
+          </div>
+        </div>
   
       </div>
     </div>
