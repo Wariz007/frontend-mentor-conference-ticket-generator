@@ -18,7 +18,7 @@ html, body{
     font-size: 16px;
     font-family: "Inconsolata";
     color: white;
-    height: 100%;
+    min-height: 100%;
 }
 
 /*reset image default settings*/
