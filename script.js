@@ -1,12 +1,19 @@
 //get DOM elements
+//button element
 const generateTicketBtn = document.getElementById('btn');
+
+//fullname elements
 const fullNameContainer = document.getElementById('full-name');
 const inputs = document.querySelectorAll('#input-container input');
 const fullNameErrorMessage = document.getElementById('fullname-error-message');
 
+//email elements
 const emailContainer = document.getElementById('email-address');
 const emailErrorMessage = document.getElementById('email-error-message');
 
+//github username elements
+const usernameContainer = document.getElementById('github-username');
+const usernameErrorMessage = document.getElementById('githubusername-error-message');
 
 //create a function expression to contain the logic
 const validateFullName = () => {
@@ -69,15 +76,33 @@ const validateEmail = () => {
 
 
 }
+const validateUsername = () => {
+    const username = usernameContainer.value.trim();
+    let isValid = true;
+
+    if(username === ''){
+        usernameContainer.style.borderColor = 'red';
+        usernameErrorMessage.classList.add('show');
+        isValid = false;
+    } else {
+        usernameErrorMessage.classList.remove('show');
+        usernameContainer.style.borderColor = '';
+    }
+
+    return isValid;
+
+}
 
 //activate button
 generateTicketBtn.addEventListener('click', (event) => {
     //assign function expression to variable 
     const isFullNameValid = validateFullName();
     const isEmailValid = validateEmail();
+    const isUsernameValid = validateUsername();
 
     if(isFullNameValid &&
-        isEmailValid) {
+        isEmailValid && 
+        isUsernameValid) {
         console.log('validation successful');
         setTimeout(() => {
             inputs.forEach(input => input.value = '')
