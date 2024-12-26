@@ -2,45 +2,51 @@
 const generateTicketBtn = document.getElementById('btn');
 const fullNameContainer = document.getElementById('full-name');
 const inputs = document.querySelectorAll('#input-container input');
-const regexError  = document.getElementsByClassName('error');
+const fullNameErrorMessage = document.getElementById('fullname-error-message');
 
 //create a function expression to contain the logic
-const validFullname = () => {
-    const fullName = fullNameContainer.value;
+const validateFullName = () => {
+    const fullname = fullNameContainer.value.trim();
+    let isValid = true;
 
-    //Regex code to accept just spaces and letters
-    const fullNameRegex = /^[A-Za-z\s]+$/; 
-    if(!fullName.match(fullNameRegex)){
+    //check if fullname container is empty
+    if(fullname === ''){
         fullNameContainer.style.borderColor = 'red';
-        return false;
+        fullNameErrorMessage.classList.add('show');
+        isValid = false;
     } else {
+        fullNameErrorMessage.classList.remove('show');
+    }
+
+    //now make sure container doesn't accept digits
+    const fullNameRegex = /^[A-Za-z\s]+$/;
+    if(!fullname.match(fullNameRegex)){
+        fullNameErrorMessage.classList.add('show');
+        fullNameContainer.style.borderColor = 'red';
+        isValid = false;
+    } else {
+        fullNameErrorMessage.classList.remove('show');
+    }
+
+    if(isValid){
         fullNameContainer.style.borderColor = '';
     }
 
-    //confirm the fullname container is not empty
-    if(fullName === ''){
-        fullNameContainer.style.borderColor = 'red';
-        fullnameError.classList.add('show');
-        return false;
-    } else {
-        fullNameContainer.style.borderColor = '';
-        return true;
-    }
-    
-}   
+    return isValid;
+}
 
-// activate the button
+//activate button
 generateTicketBtn.addEventListener('click', (event) => {
-    //assign function expression to variables
-    const isFullNameValid = validFullname();
+    //assign function expression to variable 
+    const isFullNameValid = validateFullName();
 
     if(isFullNameValid){
-        console.log('everything works fine', isFullNameValid);
+        console.log('validation successful', isFullNameValid);
         setTimeout(() => {
             inputs.forEach(input => input.value = '')
         }, 3000);
     } else {
         event.preventDefault();
-        console.log('something is wrong', isFullNameValid)
+        console.log('validation unsuccessful', isFullNameValid);
     }
 })
