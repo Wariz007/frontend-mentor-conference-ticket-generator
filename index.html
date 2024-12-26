@@ -38,7 +38,7 @@
         <label class="custom-file-upload">
   
           <span id="icon-container">
-            <img src="assets/images/icon-upload.svg" alt="" id="upload-icon">
+            <img src="assets/images/icon-upload.svg" alt="" class="upload-icon">
           </span>
   
           <span id="instruction">Drag and drop or click to upload</span>
@@ -50,14 +50,14 @@
         </p>
   
         <!--image preview container-->
-        <label class="custom-file-upload preview-file-upload">
+        <label class="preview-file-upload" id="preview-container" style="display: none;">
   
           <span id="icon-container">
-            <img src="assets/images/favicon-32x32.png" alt="" id="upload-icon">
+            <img src="assets/images/favicon-32x32.png" alt="" class="upload-icon" id="preview-image">
           </span>
   
           <div>
-            <Button class="r-and-c">Remove image</Button>
+            <Button class="r-and-c" id="remove-image">Remove image</Button>
             <Button class="r-and-c">Change image</Button>
           </div>
           <input type="file" id="upload-avatar" accept="image/*" class="inputs custom-file-input" style="display: none;">
@@ -71,6 +71,14 @@
         <!--full name input container-->
         <label for="full-name">Full name</label>
         <input type="text" id="full-name" class="inputs">
+        <!--<p class="error-message">
+          <img src="assets/images/icon-info.svg" alt="">
+          Please enter your full name
+        </p>-->
+        <p class="error-message hidden">
+          <img src="assets/images/icon-info.svg" alt="">
+          Your full name can't include numbers
+        </p>
   
         <!--email address input container-->
         <label for="email-address">Email address</label>
@@ -84,7 +92,7 @@
         <label for="github-username">Github username</label>
         <input type="text" id="github-username" class="inputs" placeholder="@yourusername">
         
-        <button>
+        <button id="btn">
           Generate my ticket
         </button>
       </div>
@@ -149,5 +157,7 @@
     </div>
 
   </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
