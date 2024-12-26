@@ -22,10 +22,10 @@ html, body{
 }
 
 /*reset image default settings*/
-img{
+/*img{
     display: block;
     height: auto;
-}
+}*/
 body{
     background-image: 
     url(assets/images/pattern-lines.svg),
@@ -133,7 +133,7 @@ input[type="file"]{
     border: none;
     box-shadow: 0 0 0 3px #ffffff98;
 }
-#upload-icon{
+.upload-icon{
     width: 2rem;
 }
 #icon-container{
@@ -224,7 +224,17 @@ button:hover{
 
 /*image preview container*/
 .preview-file-upload{
-    display: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+    background-color: var(--Neutral-700);
+    border-radius: 10px;
+    border: 1px dashed rgba(255, 255, 255, 0.596);
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+        
 }
 .preview-file-upload:hover{
     background-color: #4b486a4e;
@@ -356,6 +366,10 @@ button:hover{
     margin: 0 0 0.1rem;
 }
 
-
-
-
+/*class list styles*/
+.hidden{
+    display: none;
+}
+.show{
+    display: block;
+}
