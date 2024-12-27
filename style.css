@@ -368,10 +368,20 @@ button:hover{
 .show{
     display: block;
 }
+.notVisible{
+    visibility: hidden;
+}
 
 #ticket-container{
     display: none;
 }
 #fm-container{
     display: block;
+}
+
+#upload-avatar{
+    border: 1px solid magenta;
+    opacity: 0%;
+    margin: 0;
+    padding: 0;
 }

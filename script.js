@@ -1,4 +1,29 @@
 //get DOM elements
+const imageInput = document.querySelector('#upload-avatar');
+const displayImage = document.querySelector('#icon-container');
+let uploadedImage = '';
+const ImagePreviewContainer = document.querySelector('.preview-file-upload');
+const hideThings = document.querySelector('.upload-icon');
+const instruction = document.getElementById('instruction');
+const buttons = document.getElementById('buttons');
+
+imageInput.addEventListener('change', function(){
+    const reader = new FileReader();
+    reader.addEventListener('load', () => {
+        uploadedImage = reader.result;
+        displayImage.style.background = `url(${uploadedImage})`;
+        displayImage.style.backgroundSize = 'cover';
+        displayImage.style.backgroundPosition = 'center';
+    })
+    reader.readAsDataURL(this.files[0]);
+
+    imageInput.classList.add('hidden');
+    instruction.classList.add('hidden');
+    hideThings.classList.add('notVisible');
+    buttons.classList.add('show');
+});
+
+
 //button element
 const generateTicketBtn = document.getElementById('btn');
 

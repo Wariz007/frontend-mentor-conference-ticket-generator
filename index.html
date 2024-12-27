@@ -41,26 +41,25 @@
             <span id="icon-container">
               <img src="assets/images/icon-upload.svg" alt="" class="upload-icon">
             </span>
-    
-            <span id="instruction">Drag and drop or click to upload</span>
-            <input type="file" id="upload-avatar" accept="image/*" class="inputs custom-file-input" style="display: none;">
-          </label><br>
-          <p class="error-message" style="display: none;">
-            <img src="assets/images/icon-info.svg" alt="">
-            file too large. Please upload a photo under 500KB.
-          </p>
-    
-          <!--image preview container-->
-          <label class="preview-file-upload" id="preview-container" style="display: none;">
-    
-            <span id="icon-container">
-              <img src="assets/images/favicon-32x32.png" alt="" class="upload-icon" id="preview-image">
-            </span>
-    
-            <div>
+            
+            
+            <span id="instruction" class="toHide">Drag and drop or click to upload</span>
+            <input type="file" id="upload-avatar" accept="image/png, image/jpg, image/jpeg" class="inputs custom-file-input">
+
+            <div class="hidden" id="buttons">
               <Button class="r-and-c" id="remove-image">Remove image</Button>
               <Button class="r-and-c">Change image</Button>
             </div>
+          </label><br>
+    
+          <!--image preview container-->
+          <label class="preview-file-upload hidden" id="preview-container">
+    
+            <span id="icon-container">
+              <img src="" alt="" class="upload-icon" id="preview-image">
+            </span>
+    
+        
             <input type="file" id="upload-avatar" accept="image/*" class="inputs custom-file-input" style="display: none;">
           </label><br>
     
