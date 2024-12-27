@@ -16,6 +16,7 @@ const usernameContainer = document.getElementById('github-username');
 const usernameErrorMessage = document.getElementById('githubusername-error-message');
 
 //pages
+const mainContainer = document.getElementById('main-container');
 const formPage = document.getElementById('fm-container');
 const ticketPage = document.getElementById('ticket-container');
 
@@ -105,26 +106,27 @@ const validateUsername = () => {
 
 //activate button
 generateTicketBtn.addEventListener('click', (event) => {
-    //assign function expression to variable 
+    //assign function expression to variables 
     const isFullNameValid = validateFullName();
     const isEmailValid = validateEmail();
     const isUsernameValid = validateUsername();
 
-    if(isFullNameValid && isEmailValid && isUsernameValid) {
-        console.log('validation successful');
-        
+    if(isFullNameValid && isEmailValid && isUsernameValid){
+
         //pages
         formPage.style.display = 'none';
         ticketPage.style.display = 'block';
-        console.log(ticketPage);
-
 
         headingNotification.innerHTML = `Congrats, ${fullNameContainer.value} Your ticket is ready.`;
         subHeadingNotification.innerHTML = `We've emailed your ticket to ${emailContainer.value} and will send updates in the run up to the event.`;
         ticketName.innerHTML = `${fullNameContainer.value}`;
         username.innerHTML = `@${usernameContainer.value}`;
+
+        //clear input containers after 2 seconds
+        setTimeout(() => {
+            inputs.forEach(input => input.value = '');
+        }, 2000);
     } else {
         event.preventDefault();
-        console.log('validation unsuccessful');
     }
 })  
