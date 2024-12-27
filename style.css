@@ -373,3 +373,14 @@ button:hover{
 .show{
     display: block;
 }
+
+#ticket-container{
+    display: none;
+}
+#fm-container{
+    display: block;
+}
+
+#h1-notification span{
+    color: var(--Gradient-text);
+}

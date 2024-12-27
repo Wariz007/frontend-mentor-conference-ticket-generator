@@ -15,6 +15,16 @@ const emailErrorMessage = document.getElementById('email-error-message');
 const usernameContainer = document.getElementById('github-username');
 const usernameErrorMessage = document.getElementById('githubusername-error-message');
 
+//pages
+const formPage = document.getElementById('fm-container');
+const ticketPage = document.getElementById('ticket-container');
+
+//ticket container page code
+const headingNotification = document.getElementById('h1-notification');
+const subHeadingNotification = document.getElementById('sub-heading-notification');
+const ticketName = document.getElementById('name');
+const username = document.getElementById('username');
+
 //create a function expression to contain the logic
 const validateFullName = () => {
     const fullname = fullNameContainer.value.trim();
@@ -100,15 +110,21 @@ generateTicketBtn.addEventListener('click', (event) => {
     const isEmailValid = validateEmail();
     const isUsernameValid = validateUsername();
 
-    if(isFullNameValid &&
-        isEmailValid && 
-        isUsernameValid) {
+    if(isFullNameValid && isEmailValid && isUsernameValid) {
         console.log('validation successful');
-        setTimeout(() => {
-            inputs.forEach(input => input.value = '')
-        }, 3000);
+        
+        //pages
+        formPage.style.display = 'none';
+        ticketPage.style.display = 'block';
+        console.log(ticketPage);
+
+
+        headingNotification.innerHTML = `Congrats, ${fullNameContainer.value} Your ticket is ready.`;
+        subHeadingNotification.innerHTML = `We've emailed your ticket to ${emailContainer.value} and will send updates in the run up to the event.`;
+        ticketName.innerHTML = `${fullNameContainer.value}`;
+        username.innerHTML = `@${usernameContainer.value}`;
     } else {
         event.preventDefault();
         console.log('validation unsuccessful');
     }
-})
+})  
