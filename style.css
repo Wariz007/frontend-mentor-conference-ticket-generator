@@ -21,11 +21,6 @@ html, body{
     min-height: 100%;
 }
 
-/*reset image default settings*/
-/*img{
-    display: block;
-    height: auto;
-}*/
 body{
     background-image: 
     url(assets/images/pattern-lines.svg),
@@ -379,8 +374,4 @@ button:hover{
 }
 #fm-container{
     display: block;
-}
-
-#h1-notification span{
-    color: var(--Gradient-text);
 }
